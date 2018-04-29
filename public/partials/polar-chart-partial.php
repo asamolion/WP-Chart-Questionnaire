@@ -356,6 +356,10 @@
             </ul>
         </div>
 
+        <div class="step">
+            <h1>Here are what your 7 pillars of wellbeing look like</h1>
+        </div>
+
     </form>
     </div>
     <div class="chart-container">
