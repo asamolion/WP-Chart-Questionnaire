@@ -47,7 +47,7 @@ add_action('admin_menu', 'pcq_options_page');
 
 function pcq_shortcodes_init()
 {
-    function pcq_survey_shortcode($atts = [], $content = null)
+    function pcq_survey_shortcode()
     {
         echo '<style>';
         include plugin_dir_path(__FILE__) . 'style.min.css';
