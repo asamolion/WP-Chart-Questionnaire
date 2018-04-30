@@ -41,7 +41,7 @@ div#pcq .img{width:100%}
 div#pcq .step{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 div#pcq .step.row-flex-display{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 div#pcq .step .col-6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
-div#pcq .select-list .select-box{border:1px solid black;cursor:pointer;display:inline-block;position:relative;height:75px;width:75px}
+div#pcq .select-list .select-box{border:1px solid black;cursor:pointer;display:inline-block;position:relative;height:65px;width:65px}
 div#pcq .select-list .select-box:hover{background-color:aquamarine}
 div#pcq .select-list .select-box.active{background:red}
 div#pcq .select-list .select-box input[type="radio"]{cursor:pointer;height:100%;width:100%;opacity:0;margin:0}

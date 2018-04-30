@@ -7,18 +7,6 @@
 <div id="pcq">
     <div class="form-container">
     <form id="pcq-form">
-        <div class="step row-flex-display">
-            <div class="row">
-                <div class="col-6">
-                    <img class="img" src="<?php echo plugins_url('/images/pillars.jpg', dirname(__FILE__)); ?>" alt="">
-                </div>
-                <div class="col-6">
-                    <h2 class="center-text">Get to know how well you are by filling our survey of the 7 pillars of well being</h2>
-                    <button class="butn step-butn">Start the Questionnaire</button>
-                </div>
-            </div>
-        </div>
-
         <div class="step">
             <h1 class="center-text">Nutrition</h1>
             <p class="center-text">How would you rate this area of your life?</p>
@@ -68,7 +56,7 @@
         </div>
 
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Activity</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -116,7 +104,7 @@
             </ul>
         </div>
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Cleansing</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -164,7 +152,7 @@
             </ul>
         </div>
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Love</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -212,7 +200,7 @@
             </ul>
         </div>
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Relaxation</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -260,7 +248,7 @@
             </ul>
         </div>
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Service</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -308,7 +296,7 @@
             </ul>
         </div>
 
-        <div class="step">
+        <div class="step hidden">
             <h1 class="center-text">Fun</h1>
             <p class="center-text">How would you rate this area of your life?</p>
 
@@ -356,8 +344,8 @@
             </ul>
         </div>
 
-        <div class="step">
-            <h1>Here are what your 7 pillars of wellbeing look like</h1>
+        <div class="step hidden">
+            <h3 class="center-text font-heavy">Here are what your 7 pillars of wellbeing look like</h3>
         </div>
 
     </form>

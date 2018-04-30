@@ -1,4 +1,10 @@
 (function($) {
+    var ctx = document.getElementById("pcq-chart").getContext("2d");
+
+    var $steps = $(".step");
+    var currentStep = 0;
+    $steps.addClass("hidden");
+
     $("input:radio").on("click", function() {
         var $this = $(this);
 
@@ -8,10 +14,6 @@
             .removeClass("active");
         $this.parents(".select-box").addClass("active");
     });
-
-    var $steps = $(".step");
-    var currentStep = 0;
-    $steps.addClass("hidden");
 
     $(document).ready(function() {
         $($steps[currentStep]).removeClass("hidden");
@@ -28,6 +30,12 @@
             addDatatToChart($this.val(), $this.attr("name"));
             showNextStep();
         });
+
+        $(".select-box > span").on("click", function() {
+            $(this)
+                .siblings("input")
+                .trigger("click");
+        });
     });
 
     function showNextStep() {
@@ -42,7 +50,6 @@
         $($steps[currentStep]).removeClass("hidden");
     }
 
-    var ctx = document.getElementById("pcq-chart").getContext("2d");
     var myChart = new Chart(ctx, {
         type: "polarArea",
         data: {
@@ -74,6 +81,15 @@
             ]
         },
         options: {
+            scale: {
+                display: false
+            },
+            legend: {
+                labels: {
+                    boxWidth: 30,
+                    padding: 5
+                }
+            },
             responsive: true
         }
     });
