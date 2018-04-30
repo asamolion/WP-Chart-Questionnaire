@@ -10,7 +10,7 @@
         <div class="step row-flex-display">
             <div class="row">
                 <div class="col-6">
-                    <img class="img" src="<?php echo plugins_url('/polar-chart-questionnaire/public/images/pillars.jpg'); ?>" alt="">
+                    <img class="img" src="<?php echo plugins_url('/images/pillars.jpg', dirname(__FILE__)); ?>" alt="">
                 </div>
                 <div class="col-6">
                     <h2 class="center-text">Get to know how well you are by filling our survey of the 7 pillars of well being</h2>
