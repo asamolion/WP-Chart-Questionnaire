@@ -46,10 +46,6 @@ function pcq_options_page()
 }
 add_action('admin_menu', 'pcq_options_page');
 
-function pcq_settings_init() {
-    register_setting ()
-}
-
 
 function pcq_shortcodes_init()
 {
