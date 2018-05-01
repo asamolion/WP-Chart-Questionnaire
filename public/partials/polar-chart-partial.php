@@ -1,4 +1,4 @@
-<?php
+........................<?php
 /**
  * Template partial for polar chart questionnaire
  */
@@ -9,6 +9,7 @@
     <form id="pcq-form">
         <div class="step">
             <h1 class="center-text">Nutrition</h1>
+            <h2 class="center-text"><?php echo get_option('pcq_heading_text'); ?></h2>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -347,9 +348,8 @@
         <div class="step hidden">
             <h3 class="center-text font-heavy">Here are what your 7 pillars of wellbeing look like</h3>
         </div>
-
     </form>
-    </div>
+        </div>
     <div class="chart-container">
         <canvas id="pcq-chart"></canvas>
     </div>
