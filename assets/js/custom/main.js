@@ -1,9 +1,21 @@
 (function($) {
-    var ctx = document.getElementById("pcq-chart").getContext("2d");
+    "use strict";
+    var chartCanvas = document.getElementById("pcq-chart");
+    var ctx = chartCanvas.getContext("2d");
 
     var $steps = $(".step");
     var currentStep = 0;
     $steps.addClass("hidden");
+
+    var colorPresets = [
+        "rgba(184, 14, 1, 0.5)",
+        "rgba(255, 132, 29, 0.5)",
+        "rgba(234, 212, 37, 0.5)",
+        "rgba(13, 172, 64, 0.5)",
+        "rgba(22, 125, 238, 0.5)",
+        "rgba(93, 33, 143, 0.5)",
+        "rgba(234, 94, 150, 0.5)"
+    ];
 
     $("input:radio").on("click", function() {
         var $this = $(this);
@@ -25,7 +37,7 @@
         });
 
         $(".select-box > input").on("click", function() {
-            $this = $(this);
+            var $this = $(this);
 
             addDatatToChart($this.val(), $this.attr("name"));
             showNextStep();
@@ -50,6 +62,25 @@
         $($steps[currentStep]).removeClass("hidden");
     }
 
+    function createGradient(color) {
+        var xCoor = $(chartCanvas).width() / 2;
+        var yCoor = $(chartCanvas).height() / 2 + 35;
+
+        var gradient = ctx.createRadialGradient(
+            xCoor,
+            yCoor,
+            0.0,
+            xCoor,
+            yCoor,
+            xCoor / 4
+        );
+
+        gradient.addColorStop(0.0, "white");
+        gradient.addColorStop(1.0, color);
+
+        return gradient;
+    }
+
     var myChart = new Chart(ctx, {
         type: "polarArea",
         data: {
@@ -58,15 +89,7 @@
                 {
                     label: "Life",
                     data: [],
-                    backgroundColor: [
-                        "rgba(184, 14, 1, 0.8)",
-                        "rgba(255, 132, 29, 0.8)",
-                        "rgba(234, 212, 37, 0.8)",
-                        "rgba(13, 172, 64, 0.8)",
-                        "rgba(22, 125, 238, 0.8)",
-                        "rgba(93, 33, 143, 0.8)",
-                        "rgba(234, 94, 150, 0.8)"
-                    ],
+                    backgroundColor: [],
                     borderColor: [
                         "rgba(184, 14, 1, 1)",
                         "rgba(255, 132, 29, 1)",
@@ -82,7 +105,12 @@
         },
         options: {
             scale: {
-                display: false
+                gridLines: {
+                    color: "#FFF"
+                },
+                ticks: {
+                    display: false
+                }
             },
             legend: {
                 labels: {
@@ -97,6 +125,10 @@
     function addDatatToChart(value, label) {
         myChart.data.datasets[0].data.push(value);
         myChart.data.labels.push(label);
+
+        myChart.data.datasets[0].backgroundColor.push(
+            createGradient(colorPresets.shift())
+        );
         myChart.update();
     }
 })(jQuery);

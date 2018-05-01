@@ -36,7 +36,8 @@ function pcq_options_page_html()
 function pcq_options_page()
 {
     add_submenu_page(
-        'tools.php',
+        'tools
+        .php',
         'Polar Chart Questionnaire Options',
         'Polar Chart Questionnaire',
         'manage_options',
@@ -44,6 +45,11 @@ function pcq_options_page()
         'pcq_options_page_html');
 }
 add_action('admin_menu', 'pcq_options_page');
+
+function pcq_settings_init() {
+    register_setting ()
+}
+
 
 function pcq_shortcodes_init()
 {
