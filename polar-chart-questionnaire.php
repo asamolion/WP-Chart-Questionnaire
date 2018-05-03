@@ -16,7 +16,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-function pcq_options_page_html()
+function pcq_settings_page_html()
 {
     // check user capabilities
     if (!current_user_can('manage_options')) {
@@ -32,51 +32,48 @@ function pcq_options_page_html()
     </div>.
 
     <div class="wrap">
-        <form action="options.php">
-            <?php settings_fields('pcq_options');?>
-            <label for="pcq_heading_text">Heading Text</label>
-
-            <input type="text" id="pcq_heading_text" name="pcq_heading_text" value="<?php echo get_option('pcq_heading_text'); ?>">
-
-            <?php submit_button();?>
+        <?php settings_errors(); ?>
+        <form method="POST" action="options.php">
+        <?php settings_fields( 'pcq-settings' ); ?>
+        <?php do_settings_sections( 'pcq-settings' ) ?>
+        <?php submit_button(); ?>
         </form>
     </div>
     <?php
 }
 
-function pcq_options_page()
+function pcq_settings_page()
 {
     add_submenu_page(
         'tools.php',
-        'Polar Chart Questionnaire Options',
-        'Polar Chart Questionnaire',
+        'WP Chart Questionnaire Options',
+        'WP Chart Questionnaire',
         'manage_options',
-        'pcq_options',
-        'pcq_options_page_html');
+        'pcq-settings',
+        'pcq_settings_page_html');
+
+    add_action('admin_init', 'pcq_settings_init');
 }
-add_action('admin_menu', 'pcq_options_page');
+add_action('admin_menu', 'pcq_settings_page');
 
 function pcq_settings_init()
 {
-    register_setting('pcq_options', 'pcq_heading_text');
-
-    add_settings_section('pcq_settings_section', 'Heading Text', 'pcq_settings_section_cb', 'pcq_options');
-
-    add_settings_field('pcq_heading_text', 'heading_text', 'pcq_settings_field_cb', 'pcq_options', 'pcq_settings_section');
-}
-add_action('admin_init', 'pcq_settings_init');
-
-function pcq_settings_section_cb()
-{
-
+    register_setting( 'pcq-settings', 'pcq_heading_text' );
+    add_settings_section( 'pcq-heading-section', 'Heading Options', 'pcq_heading_section_cb', 'pcq-settings' );
+    add_settings_field( 'pcq-heading-text', 'Heading Text', 'pcq_heading_text_cb', 'pcq-settings', 'pcq-heading-section');
 }
 
-function pcq_settings_field_cb()
+function pcq_heading_section_cb()
 {
-    $heading_text = get_option('pcq_heading_text');
+    echo '<p>Change your setttings</p>';
+}
 
+function pcq_heading_text_cb() {
+    $heading_text = esc_attr( get_option( 'pcq_heading_text', '' ) );
     ?>
-    <input type="text" name="pcq_heading_text" value="<?php echo isset($heading_text) ? esc_attr($heading_text) : ''; ?>">
+    <div id="titlediv">
+        <input id="title" type="text" name="pcq_heading_text" value="<?php echo $heading_text; ?>">
+    </div>
     <?php
 }
 
