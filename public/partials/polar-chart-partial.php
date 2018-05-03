@@ -9,7 +9,7 @@
     <form id="pcq-form">
         <div class="step">
             <h1 class="center-text">Nutrition</h1>
-            <h2 class="center-text"><?php echo get_option('pcq_heading_text'); ?></h2>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -59,6 +59,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Activity</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -107,6 +108,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Cleansing</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -155,6 +157,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Love</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -203,6 +206,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Relaxation</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -251,6 +255,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Service</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
@@ -299,6 +304,7 @@
 
         <div class="step hidden">
             <h1 class="center-text">Fun</h1>
+            <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
 
             <ul class="select-list">
