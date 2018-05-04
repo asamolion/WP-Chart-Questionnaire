@@ -170,12 +170,7 @@ Chart.plugins.register({
         },
         options: {
             scale: {
-                gridLines: {
-                    color: "#FFF"
-                },
-                ticks: {
-                    display: false
-                }
+                display: false
             },
             legend: {
                 labels: {

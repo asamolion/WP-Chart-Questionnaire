@@ -303,6 +303,7 @@
         </div>
 
         <div class="step hidden">
+
             <h1 class="center-text">Fun</h1>
             <h3 class="center-text"><?php echo get_option('pcq_heading_text', ''); ?></h3>
             <p class="center-text">How would you rate this area of your life?</p>
@@ -353,6 +354,7 @@
 
         <div class="step hidden">
             <h3 class="center-text font-heavy">Here are what your 7 pillars of wellbeing look like</h3>
+            <h3 class="center-text"><?php echo get_option('pcq_ending_text', '');?></h3>
         </div>
     </form>
         </div>

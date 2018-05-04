@@ -59,8 +59,12 @@ add_action('admin_menu', 'pcq_settings_page');
 function pcq_settings_init()
 {
     register_setting( 'pcq-settings', 'pcq_heading_text' );
+    register_setting( 'pcq-settings', 'pcq_ending_text' );
+
     add_settings_section( 'pcq-heading-section', 'Heading Options', 'pcq_heading_section_cb', 'pcq-settings' );
+
     add_settings_field( 'pcq-heading-text', 'Heading Text', 'pcq_heading_text_cb', 'pcq-settings', 'pcq-heading-section');
+    add_settings_field( 'pcq-ending-text', 'Ending Text', 'pcq_ending_text_cb', 'pcq-settings', 'pcq-heading-section');
 }
 
 function pcq_heading_section_cb()
@@ -73,6 +77,15 @@ function pcq_heading_text_cb() {
     ?>
     <div id="titlediv">
         <input id="title" type="text" name="pcq_heading_text" value="<?php echo $heading_text; ?>">
+    </div>
+    <?php
+}
+
+function pcq_ending_text_cb() {
+    $ending_text = esc_attr( get_option( 'pcq_ending_text', '' ) );
+    ?>
+    <div id="titlediv">
+        <input id="title" type="text" name="pcq_ending_text" value="<?php echo $ending_text; ?>">
     </div>
     <?php
 }
