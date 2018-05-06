@@ -1,81 +1,77 @@
 div#pcq {
-    @import "_simplegrid";
+  @import "_simplegrid";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  .center-text {
+    text-align: center;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  #pcq-form {
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .step {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    align-items: center;
 
-    .center-text {
-        text-align: center;
+    &.row-flex-display {
+      flex-direction: row;
+      justify-content: center;
     }
 
-    .hidden {
-        display: none !important;
+    .col-6 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+  }
 
-    #pcq-form {
+  .select-list {
+    .select-box {
+      border: 1px solid black;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      height: 65px;
+      width: 65px;
+
+      &:hover {
+        background-color: aquamarine;
+      }
+
+      input[type="radio"] {
+        cursor: pointer;
+        height: 100%;
         width: 100%;
+        opacity: 0;
+        margin: 0;
+      }
+
+      span {
+        position: absolute;
+        top: 34%;
+        left: 40%;
+      }
     }
+  }
 
-    .img {
-        width: 100%;
-    }
-
-    .step {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &.row-flex-display {
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .col-6 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-
-    .select-list {
-        .select-box {
-            border: 1px solid black;
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            height: 65px;
-            width: 65px;
-
-            &:hover {
-                background-color: aquamarine;
-            }
-
-            &.active {
-                background: red;
-            }
-
-            input[type="radio"] {
-                cursor: pointer;
-                height: 100%;
-                width: 100%;
-                opacity: 0;
-                margin: 0;
-            }
-
-            span {
-                position: absolute;
-                top: 34%;
-                left: 40%;
-            }
-        }
-    }
-
-    .butn {
-        background: none;
-        border: 2px solid #000;
-        border-radius: 10px;
-    }
+  .butn {
+    background: none;
+    border: 2px solid #000;
+    border-radius: 10px;
+  }
 }
